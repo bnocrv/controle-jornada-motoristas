@@ -14,3 +14,12 @@ Route::post('/motoristas', [MotoristaController::class, 'store'])->name('motoris
 // "Delete lógico" (desativar)
 Route::post('/motoristas/{motorista}/desativar', [MotoristaController::class, 'desativar'])
     ->name('motoristas.desativar');
+
+    use App\Http\Controllers\VeiculoController;
+
+Route::get('/veiculos', [VeiculoController::class, 'index'])->name('veiculos.index');
+Route::get('/veiculos/criar', [VeiculoController::class, 'create'])->name('veiculos.create');
+Route::post('/veiculos', [VeiculoController::class, 'store'])->name('veiculos.store');
+
+Route::post('/veiculos/{veiculo}/desativar', [VeiculoController::class, 'desativar'])
+    ->name('veiculos.desativar');
