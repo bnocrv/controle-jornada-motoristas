@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('motoristas', function (Blueprint $table) {
             $table->id();
-$table->string('nome');          // Valfredo, Marcos
-$table->boolean('ativo')->default(true);
-$table->timestamps();
+
+            // Ex.: Valfredo, Marcos
+            $table->string('nome');
+
+            // Se o motorista está ativo na empresa
+            $table->boolean('ativo')->default(true);
+
+            // created_at e updated_at
+            $table->timestamps();
         });
     }
 

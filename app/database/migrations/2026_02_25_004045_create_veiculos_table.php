@@ -12,11 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('veiculos', function (Blueprint $table) {
-         $table->id();
-$table->string('descricao');     // "Iveco", "Mercedes"
-$table->string('placa')->nullable();  // opcional por enquanto
-$table->boolean('ativo')->default(true);
-$table->timestamps();
+            $table->id();
+
+            // Ex.: "Iveco", "Mercedes"
+            $table->string('descricao');
+
+            // Opcional por enquanto
+            $table->string('placa')->nullable();
+
+            // Se o veículo está ativo/uso
+            $table->boolean('ativo')->default(true);
+
+            // created_at e updated_at
+            $table->timestamps();
         });
     }
 
